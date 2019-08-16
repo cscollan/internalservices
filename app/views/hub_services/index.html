@@ -16,10 +16,13 @@
       </h1>
 
       <p>
-        Internal services cover:
+        Hub services cover:
+        {% for i in hub_services.items %}
         <ul class="govuk-list">
           <li>
-            <a class="govuk-link" href="/hub_services/operator_hub">Operator hub </a>
+            <a href="/hub_services/index/{{ i.fields.slug }}">
+              {{i.fields.title}}</a>
+              {% endfor %}
           </li>
         </ul>
       </p>
