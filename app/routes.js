@@ -5,6 +5,7 @@ var coreController = require('./controllers/coreController.js')
 var hubServicesController = require('./controllers/HubServicesController.js')
 var informationServicesController = require('./controllers/informationServicesController.js')
 var transactionalServicesController = require('./controllers/transactionalServicesController.js')
+var webServicesController = require('./controllers/webServicesController.js')
 
 router.get('/', coreController.home_get);
 
@@ -55,6 +56,9 @@ router.get('/transactional_services/user_management', transactionalServicesContr
 router.get('/transactional_services/variation_management', transactionalServicesController.variation_management_get);
 
 // Web services
+router.get('/web_services/', webServicesController.web_services_get);
+router.get('/web_services/details/:id', webServicesController.web_services_get);
+
 
 module.exports = router
 
