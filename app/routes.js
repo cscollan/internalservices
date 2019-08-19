@@ -20,33 +20,7 @@ router.get('/information_services/details/:id', informationServicesController.in
 
 // Transactional services
 router.get('/transactional_services/index', transactionalServicesController.transactional_services_get);
-router.get('/transactional_services/address_management', transactionalServicesController.address_management_get);
-router.get('/transactional_services/annual_games_testing', transactionalServicesController.annual_games_testing_get);
-router.get('/transactional_services/apply_for_a_pfl', transactionalServicesController.apply_for_a_pfl_get);
-router.get('/transactional_services/ audit_hub', transactionalServicesController.audit_hub_get);
-router.get('/transactional_services/ domain_names', transactionalServicesController.domain_names_get);
-router.get('/transactional_services/ eadmin', transactionalServicesController.eadmin_get);
-router.get('/transactional_services/ eservices_personal', transactionalServicesController.eservices_personal_get);
-router.get('/transactional_services/esupport', transactionalServicesController.esupport_get);
-router.get('/transactional_services/games_register', transactionalServicesController.games_register_get);
-router.get('/transactional_services/gc_portal', transactionalServicesController.gc_portal_get);
-router.get('/transactional_services/invoices_and_online_payments', transactionalServicesController.invoices_and_online_payments_get);
-router.get('/transactional_services/key_event', transactionalServicesController.key_event_get);
-router.get('/transactional_services/lccp_reporting', transactionalServicesController.lccp_reporting_get);
-router.get('/transactional_services/licensing_authority_returns', transactionalServicesController.licensing_authority_returns_get);
-router.get('/transactional_services/lottery_submissions', transactionalServicesController.lottery_submissions_get);
-router.get('/transactional_services/manage_and_maintain', transactionalServicesController.manage_and_maintain_get);
-router.get('/transactional_services/operator_application_annex_a', transactionalServicesController.operator_application_annex_a_get);
-router.get('/transactional_services/operator_application_ol', transactionalServicesController.operator_application_ol_get);
-router.get('/transactional_services/operator_application_pml', transactionalServicesController.operator_application_pml_get);
-router.get('/transactional_services/processing_service', transactionalServicesController.processing_service_get);
-router.get('/transactional_services/recuritment_portal', transactionalServicesController.recuritment_portal_get);
-router.get('/transactional_services/regulatory_returns', transactionalServicesController.regulatory_returns_get);
-router.get('/transactional_services/sad_process', transactionalServicesController.sad_process_get);
-router.get('/transactional_services/security_audit_submissions', transactionalServicesController.security_audit_submissions_get);
-router.get('/transactional_services/trading_names', transactionalServicesController.trading_names_get);
-router.get('/transactional_services/user_management', transactionalServicesController.user_management_get);
-router.get('/transactional_services/variation_management', transactionalServicesController.variation_management_get);
+router.get('/transactional_services/details/:id', transactionalServicesController.transactional_services_get);
 
 // Web services
 router.get('/web_services/', webServicesController.web_services_get);
