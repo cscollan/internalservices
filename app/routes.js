@@ -16,15 +16,15 @@ router.get('/hub_services/detail_page/:id', hubServicesController.hub_services_d
 
 // Information services
 router.get('/information_services/', informationServicesController.information_services_get);
-router.get('/information_services/details/:id', informationServicesController.information_services_get);
+router.get('/information_services/detail_page/:id', informationServicesController.information_services_detail_page_get);
 
 // Transactional services
 router.get('/transactional_services/', transactionalServicesController.transactional_services_get);
-router.get('/transactional_services/details/:id', transactionalServicesController.transactional_services_get);
+router.get('/transactional_services/detail_page/:id', transactionalServicesController.transactional_services_detail_page_get);
 
 // Web services
 router.get('/web_services/', webServicesController.web_services_get);
-router.get('/web_services/details/:id', webServicesController.web_services_get);
+router.get('/web_services/detail_page/:id', webServicesController.web_services_detail_page_get);
 
 
 module.exports = router
