@@ -34,27 +34,27 @@
             
             <h1 class="govuk-heading-l">{{detail_page.fields.title}}</h1>
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible">            
-
+            
             <h2 class="govuk-heading-m">Summary</h2>
-            <p class="govuk-body-l">{{detail_page.fields.summary}}</p>
+            <p class="govuk-body-l">{% markdown %}{{detail_page.fields.summary}}{%endmarkdown%}</p>
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
             <h2 class="govuk-heading-m">Service information</h2>
-            <p class="govuk-body-l">{{detail_page.fields.serviceInformation}}</p>
+            <p class="govuk-body-l">{% markdown %}{{detail_page.fields.serviceInformation}}{%endmarkdown%}</p>
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
             <h2 class="govuk-heading-m">User stories</h2>
-            <p class="govuk-body-l">{{detail_page.fields.userStories}}</p>
+            <p class="govuk-body-l">{% markdown %}{{detail_page.fields.userStories}}{%endmarkdown%}</p>
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
             <h2 class="govuk-heading-m">Features</h2>
-            <p class="govuk-body-l">{{detail_page.fields.features}}</p>
+            <p class="govuk-body-l">{% markdown %}{{detail_page.fields.features}}{%endmarkdown%}</p>
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
             <h2 class="govuk-heading-m">Links</h2>
-            <p class="govuk-body-l">{{detail_page.fields.links}}</p>
+            <p class="govuk-body-l">{% markdown %}{{detail_page.fields.links}}{%endmarkdown%}</p>
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
+            
         </div>
     </div>
 </div>
