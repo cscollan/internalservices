@@ -20,7 +20,7 @@
         {% for i in transactional_services.items %}
         <ul class="govuk-list">
           <li>
-            <a href="/transactional_services/index/{{ i.fields.slug }}">
+            <a href="/transactional_services/detail/{{ i.fields.slug }}">
               {{i.fields.title}}</a>
               {% endfor %}
           </li>

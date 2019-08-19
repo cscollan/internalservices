@@ -10,16 +10,16 @@ var webServicesController = require('./controllers/webServicesController.js')
 router.get('/', coreController.home_get);
 
 // Hub services
-router.get('/hub_services/index', hubServicesController.hub_services_get);
-router.get('/hub_services/details/:id', hubServicesController.hub_services_get);
+router.get('/hub_services/', hubServicesController.hub_services_get);
+router.get('/hub_services/detail_page/:id', hubServicesController.hub_services_detail_page_get);
 
 
 // Information services
-router.get('/information_services/index', informationServicesController.information_services_get);
+router.get('/information_services/', informationServicesController.information_services_get);
 router.get('/information_services/details/:id', informationServicesController.information_services_get);
 
 // Transactional services
-router.get('/transactional_services/index', transactionalServicesController.transactional_services_get);
+router.get('/transactional_services/', transactionalServicesController.transactional_services_get);
 router.get('/transactional_services/details/:id', transactionalServicesController.transactional_services_get);
 
 // Web services

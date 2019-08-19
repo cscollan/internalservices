@@ -13,7 +13,7 @@ exports.transactional_services_get = function (req, res) {
   
     Promise.all([
         client.getEntries({
-          'content_type': 'publicationtransactionalContent',        
+          'content_type': 'publicationTransactionalContent',        
           order: 'fields.title'
         })
       ])

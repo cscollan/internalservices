@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% set detail_page = detail_page.items[0] %}
+
+{% block pageTitle %}
+{{detail_page.fields.title}}
+{% endblock %}
+
+{% block pageDescription %}
+{{detail_page.fields.summary}}
+{% endblock %}
+
+{% block pageMeta %}
+<meta property="og:type" content="summary" />
+<meta property="og:title" content="{{detail_page.fields.title}}" />
+<meta property="og:description" content="{{detail_page.fields.summary}}" />
+{% endblock %}
+
+{% block heroClass %}
+{% endblock %}
+
+{% block heroContent %}
+{% endblock %}
+
+{% block beforeContent %}
+<a href="/hub_services/" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            
+            <h1 class="govuk-heading-l">{{detail_page.fields.title}}</h1>
+
+            <p class="govuk-body-l">{{detail_page.fields.summary}}</p>
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+            <p class="govuk-body-l">{{detail_page.fields.serviceInformation}}</p>
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+            <p class="govuk-body-l">{{detail_page.fields.userStories}}</p>
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+            <p class="govuk-body-l">{{detail_page.fields.features}}</p>
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+            <p class="govuk-body-l">{{detail_page.fields.links}}</p>
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
