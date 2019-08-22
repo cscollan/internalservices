@@ -1,78 +1,168 @@
-{#- We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework. -#}
-{%- set assetPath = '/govuk/assets' -%}
+<!DOCTYPE html>
+<html lang="en" class="govuk-template app-html-class">
 
-{% extends "govuk/template.njk" %}
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140145199-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-{% from "govuk/components/accordion/macro.njk"        import govukAccordion %}
-{% from "govuk/components/back-link/macro.njk"        import govukBackLink %}
-{% from "govuk/components/breadcrumbs/macro.njk"      import govukBreadcrumbs %}
-{% from "govuk/components/button/macro.njk"           import govukButton %}
-{% from "govuk/components/character-count/macro.njk"  import govukCharacterCount %}
-{% from "govuk/components/checkboxes/macro.njk"       import govukCheckboxes %}
-{% from "govuk/components/date-input/macro.njk"       import govukDateInput %}
-{% from "govuk/components/details/macro.njk"          import govukDetails %}
-{% from "govuk/components/error-message/macro.njk"    import govukErrorMessage %}
-{% from "govuk/components/error-summary/macro.njk"    import govukErrorSummary %}
-{% from "govuk/components/fieldset/macro.njk"         import govukFieldset %}
-{% from "govuk/components/file-upload/macro.njk"      import govukFileUpload %}
-{% from "govuk/components/input/macro.njk"            import govukInput %}
-{% from "govuk/components/inset-text/macro.njk"       import govukInsetText %}
-{% from "govuk/components/panel/macro.njk"            import govukPanel %}
-{% from "govuk/components/phase-banner/macro.njk"     import govukPhaseBanner %}
-{% from "govuk/components/radios/macro.njk"           import govukRadios %}
-{% from "govuk/components/select/macro.njk"           import govukSelect %}
-{% from "govuk/components/skip-link/macro.njk"        import govukSkipLink %}
-{% from "govuk/components/summary-list/macro.njk"     import govukSummaryList %}
-{% from "govuk/components/table/macro.njk"            import govukTable %}
-{% from "govuk/components/tabs/macro.njk"             import govukTabs %}
-{% from "govuk/components/tag/macro.njk"              import govukTag %}
-{% from "govuk/components/textarea/macro.njk"         import govukTextarea %}
-{% from "govuk/components/warning-text/macro.njk"     import govukWarningText %}
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
 
-{% block head %}
-  {% include "includes/head.html" %}
-{% endblock %}
+        gtag('config', 'UA-140145199-3');
+    </script>
+    <meta charset="utf-8" />
+    <title>{% block pageTitle %}{% endblock %} - National Strategy to Reduce Gambling Harms - Gambling Commission
+    </title>
+    <meta name="description" content="{% block pageDescription %}{% endblock %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="blue" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="mask-icon" href="https://gc-frontend-cdn.herokuapp.com/images/govuk-mask-icon.svg" color="blue">
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="https://gc-frontend-cdn.herokuapp.com/images/govuk-apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="167x167"
+        href="https://gc-frontend-cdn.herokuapp.com/images/govuk-apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="152x152"
+        href="https://gc-frontend-cdn.herokuapp.com/images/govuk-apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" href="https://gc-frontend-cdn.herokuapp.com/images/govuk-apple-touch-icon.png">
 
-{% block pageTitle %}
-  GOV.UK Prototype Kit
-{% endblock %}
+    <!--[if !IE 8]><!-->
+    <link href="https://gc-frontend-cdn.herokuapp.com/public/stylesheets/application.css" rel="stylesheet" />
 
-{% block header %}
-  {% include "includes/cookie-banner.html" %}
-  {# Set serviceName in config.js. #}
-  {{ govukHeader({
-    homepageUrl: "/",
-    serviceName: serviceName,
-    serviceUrl: "/",
-    containerClasses: "govuk-width-container"
-  }) }}
-{% endblock %}
+    <!--<![endif]-->
 
-{% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
+    <!--[if IE 8]>
+    <link href="https://gc-frontend-cdn.herokuapp.com/public/stylesheets/application-ie8.css" rel="stylesheet" />
+  <![endif]-->
 
-{% if useAutoStoreData %}
-  {% block footer %}
-    {{ govukFooter({
-      meta: {
-        items: [
-          {
-            href: "https://govuk-prototype-kit.herokuapp.com/",
-            text: "GOV.UK Prototype Kit " + releaseVersion
-          },
-          {
-            href: "/prototype-admin/clear-data",
-            text: "Clear data"
-          }
-        ]
-      }
-    }) }}
-  {% endblock %}
-{% endif %}
+    <!--[if lt IE 9]>
+    <script src="/html5-shiv/html5shiv.js"></script>
+  <![endif]-->
 
-{% block bodyEnd %}
-  {% block scripts %}
-    {% include "includes/scripts.html" %}
-    {% block pageScripts %}{% endblock %}
-  {% endblock %}
-  <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
-{% endblock %}
+  <link href="/public/stylesheets/style.css" rel="stylesheet" />
+
+    <meta name="author" content="Gambling Commission Digital Team" />
+    <meta name="copyright" content="Gambling Commission" />
+    <meta name="robots" content="noindex,nofollow" />
+    {% block pageMeta %}{% endblock %}
+
+    <style>
+    img{max-width: 100%;}
+    </style>
+
+</head>
+
+<body class="govuk-template__body app-body-class">
+    <script>
+        document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
+    </script>
+    <section>
+        <a href="#main-content" class="govuk-skip-link">Skip to main content</a>
+
+        <div class="gc-beta-banner">
+            <div class=" govuk-width-container">
+                <span class="gc-beta-tag">beta</span> This is a new website <a href="/feedback"> give us feedback</a>.
+            </div>
+        </div>
+    </section>
+    <header class="gc-header {% block heroClass %}{% endblock%}" role="banner" data-module="govuk-header">
+        <div class="gc-header-container govuk-width-container">
+            <div class="gc-header-logo">
+                <a href="/"><span class="govuk-visually-hidden">Return to the reducing gambling harms homepage</span>
+                    <img src="https://gc-frontend-cdn.herokuapp.com/public/images/logo.png" class="gc-logo"
+                        alt="Gambling Commission logo">
+                </a>
+            </div>
+            <div class="gc-header-content">
+                <a href="/index-v2" class="gc-header-service-name">
+                    Internal services
+                </a>
+                <button type="button" role="button" class="govuk-header__menu-button govuk-js-header-toggle"
+                    aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</button>
+                <nav>
+                    <ul id="navigation" class="govuk-header__navigation " aria-label="Top Level Navigation">
+                        <li class="govuk-header__navigation-item">
+                            <a class="govuk-header__link" href="/hub_services">
+                                Hub services
+                            </a>
+                        </li>
+                        <li class="govuk-header__navigation-item">
+                            <a class="govuk-header__link" href="/information_services">
+                                Information services
+                            </a>
+                        </li>
+                        <li class="govuk-header__navigation-item">
+                            <a class="govuk-header__link" href="/Transactional_services">
+                                Transactional services
+                            </a>
+                        </li>
+                        <li class="govuk-header__navigation-item">
+                            <a class="govuk-header__link" href="/web_services">
+                             Web services
+                            </a>
+                          </li>
+                        </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    {% block heroContent %}{% endblock %}
+    <section>
+        <div class="govuk-width-container">
+            {% block beforeContent %}{% endblock %}
+        </div>
+    </section>
+    <main class="govuk-main-wrapper app-main-class govuk-!-margin-bottom-0 govuk-!-padding-bottom-0" id="main-content" role="main">
+        {% block content %}{% endblock %}
+    </main>
+    <section>
+        <div class="gc-footer-top">
+            <div class="govuk-width-container">
+                <a class="gc-return-to-top" href="#">
+                    Back to top <span class="govuk-visually-hidden">of the page</span></a>
+            </div>
+        </div>
+    </section>
+    <footer class="gc-footer " role="contentinfo">
+        <div class="govuk-width-container ">
+            <div class="govuk-footer__meta">
+                <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+                    <h3 class="govuk-visually-hidden">Support links</h3>
+                    <ul class="govuk-footer__inline-list">
+                        <li class="govuk-footer__inline-list-item">
+                            <a class="govuk-footer__link" href="/accessibility" target="_Blank">
+                                Accessibility statement
+                            </a>
+                        </li>
+                        <li class="govuk-footer__inline-list-item">
+                            <a class="govuk-footer__link"
+                                href="https://www.gamblingcommission.gov.uk/Footer/Privacy-and-cookies.aspx"
+                                target="_Blank">
+                                Privacy and cookies
+                            </a>
+                        </li>
+                        <li class="govuk-footer__inline-list-item">
+                            <a class="govuk-footer__link"
+                                href="https://www.gamblingcommission.gov.uk/Footer/Terms-and-conditions.aspx"
+                                target="_Blank">
+                                Terms and conditions
+                            </a>
+                        </li>
+                    </ul>
+                    <span class="gc-footer-sub">
+                        Built by the Gambling Commission Digital Team
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://gc-frontend-cdn.herokuapp.com/public/javascripts/jquery-1.11.3.js"></script>
+    <script src="https://gc-frontend-cdn.herokuapp.com/public/javascripts/all.js"></script>
+    <script src="https://gc-frontend-cdn.herokuapp.com/public/javascripts/application.js"></script>
+</body>
+
+</html>
