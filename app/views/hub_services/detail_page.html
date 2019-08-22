@@ -40,7 +40,7 @@
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
             <h2 class="govuk-heading-m">Service information</h2>
-            <p class="govuk-body-l">{% markdown %}{{detail_page.fields.serviceInformation}}{%endmarkdown%}</p>
+            <p class="govuk-body-l">{% markdown %}{{detail_page.fields.serviceInformation | safe}}{%endmarkdown%}</p>
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
             <h2 class="govuk-heading-m">User stories</h2>

@@ -8,6 +8,7 @@ var transactionalServicesController = require('./controllers/transactionalServic
 var webServicesController = require('./controllers/webServicesController.js')
 
 router.get('/', coreController.home_get);
+router.get('/accessibility', coreController.accessibility_get);
 router.get('/feedback', coreController.feedback_get);
 router.post('/feedback', coreController.feedback_post);
 router.get('/feedback/sent', coreController.feedback_sent_get);

@@ -9,6 +9,26 @@ const client = contentful.createClient({
     accessToken: process.env.spaceapi
 })
 
+exports.accessibility_get = function (req, res) {
+    var content;
+
+    Promise.all([
+
+            client.getEntry('mcHwIsTWBy8xxD88JTVmv')
+        ])
+        .then(([c]) => {
+
+            content = c
+
+            res.render('home/accessibility', {
+                content
+            });
+        })
+        .catch(error => {
+            console.log(error);
+        });
+}
+
 exports.feedback_get = function (req, res) {
     res.render('home/feedback');
 }

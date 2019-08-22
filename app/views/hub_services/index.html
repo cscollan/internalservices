@@ -1,35 +1,37 @@
-
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Internal Services
+Internal Services
+{% endblock %}
+
+{% block beforeContent %}
+<a href="/home/" class="govuk-back-link">Back</a>
 {% endblock %}
 
 {% block content %}
 
 
-<div class="govuk-width-container">
- <main class="govuk-main-wrapper">
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        Hub Services
-        <hr class="govuk-section-break govuk-section-break--invisible">
-        <a href="/home/" class="govuk-back-link">Back</a>
-      </h1>
-      
-      <p>
-        Hub services cover:
-        {% for i in hub_services.items %}
-        <ul class="govuk-list">
-          <li>
-            <a href="/hub_services/detail_page/{{ i.fields.slug }}">
-              {{i.fields.title}}</a>
-              {% endfor %}
-          </li>
-        </ul>
-      </p>
-    </main>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      Hub Services
+      <hr class="govuk-section-break govuk-section-break--invisible">
+
+    </h1>
+
+    <p>
+      Hub services cover:
+      {% for i in hub_services.items %}
+      <ul class="govuk-list">
+        <li>
+          <a href="/hub_services/detail_page/{{ i.fields.slug }}">
+            {{i.fields.title}}</a>
+          {% endfor %}
+        </li>
+      </ul>
+    </p>
   </div>
+</div>
 
 {% endblock %}

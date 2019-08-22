@@ -77,8 +77,8 @@
                 </a>
             </div>
             <div class="gc-header-content">
-                <a href="/index-v2" class="gc-header-service-name">
-                    Internal services
+                <a href="/index" class="gc-header-service-name">
+                    Service catalogue
                 </a>
                 <button type="button" role="button" class="govuk-header__menu-button govuk-js-header-toggle"
                     aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</button>
@@ -115,8 +115,11 @@
             {% block beforeContent %}{% endblock %}
         </div>
     </section>
-    <main class="govuk-main-wrapper app-main-class govuk-!-margin-bottom-0 govuk-!-padding-bottom-0" id="main-content" role="main">
-        {% block content %}{% endblock %}
+    <main class="govuk-main-wrapper app-main-class" id="main-content" role="main">
+            <div class="govuk-width-container">
+                        {% block content %}{% endblock %}
+                      
+                        </div>
     </main>
     <section>
         <div class="gc-footer-top">

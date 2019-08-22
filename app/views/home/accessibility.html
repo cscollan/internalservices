@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+
+{% block pageTitle %}
+{{content.fields.title}}
+{% endblock %}
+
+
+{% block heroClass %}
+{% endblock %}
+
+{% block heroContent %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-l">{{content.fields.title}}</h1>
+
+            {% markdown %}
+            {{content.fields.content}}
+            {% endmarkdown%}
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
