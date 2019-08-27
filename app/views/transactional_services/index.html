@@ -11,24 +11,40 @@
 
 {% block content %}
 
-  <div class="govuk-grid-row">
+<div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">
         Transactional Services
         <hr class="govuk-section-break govuk-section-break--invisible">
       </h1>
-      
-      <p>
-        Transactional services cover:
-        {% for i in transactional_services.items %}
-        <ul class="govuk-list">
-          <li>
-            <a href="/transactional_services/detail_page/{{ i.fields.slug }}">
-              {{i.fields.title}}</a>
-              {% endfor %}
-          </li>
-        </ul>
-      </p>
-
-
-{% endblock %}
+  
+      <p> Transactional services cover:</p>
+      <div class="govuk-grid-row">
+        <div class="gc-promo-group">
+          {% for i in transactional_services.items %}
+  
+          <div class="govuk-grid-column-full gc-promo-group__item">
+            <div class="gc-promo app-promo--grey">
+              <a class="gc-promo__link-wrapper" href="/transactional_services/detail_page/{{ i.fields.slug }}">
+                <div class="gc-promo__content">
+                  <h3 class="govuk-heading-s govuk-!-margin-bottom-2">{{i.fields.title}}</h3>
+                  <p class="gc-promo__description">{{i.fields.shortDescription}}</p>
+                </div>
+              </a>
+            </div>
+          </div>
+  
+          {% endfor %}
+        </div>
+      </div>
+  
+    </div>
+  
+    <div class="govuk-grid-column-one-third"></div>
+  
+  
+  
+  </div>
+  </div>
+  
+  {% endblock %}
