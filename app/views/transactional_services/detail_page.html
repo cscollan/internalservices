@@ -36,10 +36,10 @@
                 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible">
     
                 <h2 class="govuk-heading-m">Summary</h2>
-                <p class="govuk-body-l">{% markdown %}{{detail_page.fields.summary}}{%endmarkdown%}</p>
+                <p class="govuk-body-l">{% markdown %}{{detail_page.fields.summary | safe}}{%endmarkdown%}</p>
     
                 <h2 class="govuk-heading-m">User stories</h2>
-                <p class="govuk-body-l">{% markdown %}{{detail_page.fields.userStories}}{%endmarkdown%}</p>
+                <p class="govuk-body-l">{% markdown %}{{detail_page.fields.userStories | safe}}{%endmarkdown%}</p>
     
                 <h2 class="govuk-heading-m">Features</h2>
                 <p class="govuk-body-l">{% markdown %}{{detail_page.fields.features}}{%endmarkdown%}</p>
