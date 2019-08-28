@@ -28,40 +28,69 @@
 
 {% block content %}
 
+
+
 <div class="govuk-width-container">
-        <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds">
-    
-                <h1 class="govuk-heading-l">{{detail_page.fields.title}}</h1>
-                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible">
-    
-                <h2 class="govuk-heading-m">Summary</h2>
-                <p class="govuk-body-l">{% markdown %}{{detail_page.fields.summary}}{%endmarkdown%}</p>
-    
-                <h2 class="govuk-heading-m">User stories</h2>
-                <p class="govuk-body-l">{% markdown %}{{detail_page.fields.userStories}}{%endmarkdown%}</p>
-    
-                <h2 class="govuk-heading-m">Features</h2>
-                <p class="govuk-body-l">{% markdown %}{{detail_page.fields.features}}{%endmarkdown%}</p>
-    
-                <h2 class="govuk-heading-m">Links</h2>
-                <p class="govuk-body-l">{% markdown %}{{detail_page.fields.links | safe}}{%endmarkdown%}</p>
-    
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+            <div class="app-related-items">
+
+                <nav class="gc-vertical-nav">
+                    <ul class="gc-vertical-nav__section">
+                        <li class="gc-vertical-nav__section-item  gc-vertical-nav__section-item--current">
+                            <a class="gc-vertical-nav__link govuk-link" href="#">Currently selected</a>
+                        </li>
+                        <li class="gc-vertical-nav__section-item ">
+                            <a class="gc-vertical-nav__link govuk-link" href="#">Not selected and no count</a>
+                        </li>
+
+                        <li class="gc-vertical-nav__section-item ">
+                            <span class="gc-vertical-nav--count">5<span class="govuk-visually-hidden">hidden
+                                    description</span></span>
+                            <a class="gc-vertical-nav__link govuk-link" href="#">Not selected with a count</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-    
+        </div>
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">{{detail_page.fields.title}}</h1>
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible">
+
+        
+            <h2 class="govuk-heading-m">Service information</h2>
+            <div class="govuk-grid-row">
             <div class="govuk-grid-column-one-third">
-                <div class="app-related-items">
-    
-                    <h2 class="govuk-heading-m">Service information</h2>
-                    <p class="govuk-body-l">{% markdown %}{{detail_page.fields.serviceInformation | safe}}{%endmarkdown%}
-                    </p>
-    
-                    <!-- <div class="gc-secondary"></div> -->
-    
+                    <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Product Owner</h3>
+                    <p class="govuk-body">{{detail_page.fields.productOwner}}</p>
+                </div>
+                <div class="govuk-grid-column-one-third">
+                    <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Service Owner</h3>
+                    <p class="govuk-body">{{detail_page.fields.serviceOwner}}</p>
+                </div>
+            
+                <div class="govuk-grid-column-one-third">
+                    <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Business Area</h3>
+                    <p class="govuk-body">{{detail_page.fields.businessArea}}</p>
                 </div>
             </div>
-    
+            
+
+            <h2 class="govuk-heading-m govuk-!-margin-top-5">Summary</h2>
+            <p class="govuk-body">{% markdown %}{{detail_page.fields.summary}}{%endmarkdown%}</p>
+
+            <h2 class="govuk-heading-m">User stories</h2>
+            <p class="govuk-body">{% markdown %}{{detail_page.fields.userStories}}{%endmarkdown%}</p>
+
+            <h2 class="govuk-heading-m">Features</h2>
+            <p class="govuk-body">{% markdown %}{{detail_page.fields.features}}{%endmarkdown%}</p>
+
+            <h2 class="govuk-heading-m">Links</h2>
+            <p class="govuk-body">{% markdown %}{{detail_page.fields.links | safe}}{%endmarkdown%}</p>
+
         </div>
+
     </div>
+</div>
 
 {% endblock %}

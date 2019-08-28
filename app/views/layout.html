@@ -42,7 +42,7 @@
     <script src="/html5-shiv/html5shiv.js"></script>
   <![endif]-->
 
-  <link href="/public/stylesheets/style.css" rel="stylesheet" />
+    <link href="/public/stylesheets/style.css" rel="stylesheet" />
 
     <meta name="author" content="Gambling Commission Digital Team" />
     <meta name="copyright" content="Gambling Commission" />
@@ -50,7 +50,9 @@
     {% block pageMeta %}{% endblock %}
 
     <style>
-    img{max-width: 100%;}
+        img {
+            max-width: 100%;
+        }
     </style>
 
 </head>
@@ -101,25 +103,24 @@
                         </li>
                         <li class="govuk-header__navigation-item">
                             <a class="govuk-header__link" href="/web_services">
-                             Web services
+                                Web services
                             </a>
-                          </li>
-                        </ul>
+                        </li>
+                    </ul>
                 </nav>
             </div>
         </div>
     </header>
     {% block heroContent %}{% endblock %}
-    <section>
+        <section>
         <div class="govuk-width-container">
             {% block beforeContent %}{% endblock %}
         </div>
     </section>
     <main class="govuk-main-wrapper app-main-class" id="main-content" role="main">
-            <div class="govuk-width-container">
-                        {% block content %}{% endblock %}
-                      
-                        </div>
+        <div class="govuk-width-container">
+            {% block content %}{% endblock %}
+        </div>
     </main>
     <section>
         <div class="gc-footer-top">
