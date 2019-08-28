@@ -28,37 +28,68 @@
 
 {% block content %}
 
+
+
 <div class="govuk-width-container">
     <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-grid-column-one-third">
 
+
+            <nav class="gc-vertical-nav">
+                <ul class="gc-vertical-nav__section">
+                    {% for i in list_of_information_services.items %}
+                    
+                    {% if i.fields.title === detail_page.fields.title %}
+                    <li class="gc-vertical-nav__section-item gc-vertical-nav__section-item--current">
+                        <a class="gc-vertical-nav__link govuk-link"
+                            href="/information_services/detail_page/{{ i.fields.slug }}">{{i.fields.title}}</a>
+                    </li>
+                    {% else %}
+                    <li class="gc-vertical-nav__section-item">
+                        <a class="gc-vertical-nav__link govuk-link"
+                            href="/information_services/detail_page/{{ i.fields.slug }}">{{i.fields.title}}</a>
+                    </li>
+                    {% endif %}
+                    {%endfor%}
+
+
+                </ul>
+            </nav>
+
+        </div>
+        <div class="govuk-grid-column-two-thirds">
             <h1 class="govuk-heading-l">{{detail_page.fields.title}}</h1>
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible">
 
-            <h2 class="govuk-heading-m">Summary</h2>
-            <p class="govuk-body-l">{% markdown %}{{detail_page.fields.summary}}{%endmarkdown%}</p>
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third">
+                    <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Product Owner</h2>
+                    <p class="govuk-body">{{detail_page.fields.productOwner}}</p>
+                </div>
+                <div class="govuk-grid-column-one-third">
+                    <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Service Owner</h2>
+                    <p class="govuk-body">{{detail_page.fields.serviceOwner}}</p>
+                </div>
+
+                <div class="govuk-grid-column-one-third">
+                    <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Business Area</h2>
+                    <p class="govuk-body">{{detail_page.fields.businessArea}}</p>
+                </div>
+            </div>
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+            <h2 class="govuk-heading-m govuk-!-margin-top-5">Summary</h2>
+            <p class="govuk-body">{% markdown %}{{detail_page.fields.summary}}{%endmarkdown%}</p>
 
             <h2 class="govuk-heading-m">User stories</h2>
-            <p class="govuk-body-l">{% markdown %}{{detail_page.fields.userStories}}{%endmarkdown%}</p>
+            <p class="govuk-body">{% markdown %}{{detail_page.fields.userStories}}{%endmarkdown%}</p>
 
             <h2 class="govuk-heading-m">Features</h2>
-            <p class="govuk-body-l">{% markdown %}{{detail_page.fields.features}}{%endmarkdown%}</p>
+            <p class="govuk-body">{% markdown %}{{detail_page.fields.features}}{%endmarkdown%}</p>
 
             <h2 class="govuk-heading-m">Links</h2>
-            <p class="govuk-body-l">{% markdown %}{{detail_page.fields.links | safe}}{%endmarkdown%}</p>
+            <p class="govuk-body">{% markdown %}{{detail_page.fields.links | safe}}{%endmarkdown%}</p>
 
-        </div>
-
-        <div class="govuk-grid-column-one-third">
-            <div class="app-related-items">
-
-                <h2 class="govuk-heading-m">Service information</h2>
-                <p class="govuk-body-l">{% markdown %}{{detail_page.fields.serviceInformation | safe}}{%endmarkdown%}
-                </p>
-
-                <!-- <div class="gc-secondary"></div> -->
-
-            </div>
         </div>
 
     </div>
