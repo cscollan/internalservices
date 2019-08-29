@@ -28,13 +28,9 @@
 
 {% block content %}
 
-
-
 <div class="govuk-width-container">
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-third">
-
-
             <nav class="gc-vertical-nav">
                 <ul class="gc-vertical-nav__section">
                     {% for i in list_of_transactional_services.items %}
@@ -51,8 +47,6 @@
                     </li>
                     {% endif %}
                     {%endfor%}
-
-
                 </ul>
             </nav>
         </div>
@@ -65,7 +59,7 @@
                     Legacy
                 </strong>
             </span>
-            
+
             {% endif %}
 
             <h1 class="govuk-heading-l">{{detail_page.fields.title}}</h1>
@@ -80,7 +74,6 @@
                     <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Service Owner</h2>
                     <p class="govuk-body">{{detail_page.fields.serviceOwner}}</p>
                 </div>
-
                 <div class="govuk-grid-column-one-third">
                     <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Business Area</h2>
                     <p class="govuk-body">{{detail_page.fields.businessArea}}</p>
@@ -99,9 +92,7 @@
 
             <h2 class="govuk-heading-m govuk-!-margin-top-5">Links</h2>
             <p class="govuk-body">{% markdown %}{{detail_page.fields.links | safe}}{%endmarkdown%}</p>
-
         </div>
-
     </div>
 </div>
 
