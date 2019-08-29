@@ -7,7 +7,7 @@ var informationServicesController = require('./controllers/informationServicesCo
 var transactionalServicesController = require('./controllers/transactionalServicesController.js')
 var webServicesController = require('./controllers/webServicesController.js')
 
-router.get('/', coreController.home_get);
+router.get('/', coreController.services_catalogue_get);
 router.get('/accessibility', coreController.accessibility_get);
 router.get('/feedback', coreController.feedback_get);
 router.post('/feedback', coreController.feedback_post);
