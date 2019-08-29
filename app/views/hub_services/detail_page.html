@@ -38,7 +38,7 @@
             <nav class="gc-vertical-nav">
                 <ul class="gc-vertical-nav__section">
                     {% for i in list_of_hub_services.items %}
-                    <!-- if {{i.fields.title}} = {{detail_page.fields.title}} then gc-vertical-nav__section-item--current -->
+
                     {% if i.fields.title === detail_page.fields.title %}
                     <li class="gc-vertical-nav__section-item gc-vertical-nav__section-item--current">
                         <a class="gc-vertical-nav__link govuk-link"
@@ -55,9 +55,19 @@
 
                 </ul>
             </nav>
-
         </div>
+
         <div class="govuk-grid-column-two-thirds">
+
+            {% if detail_page.fields.legacy === true %}
+            <span>
+                <strong class="govuk-tag govuk-phase-banner__content__tag govuk-!-margin-bottom-3">
+                    Legacy
+                </strong>
+            </span>
+            
+            {% endif %}
+
             <h1 class="govuk-heading-l">{{detail_page.fields.title}}</h1>
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible">
 
@@ -89,7 +99,6 @@
 
             <h2 class="govuk-heading-m govuk-!-margin-top-5">Links</h2>
             <p class="govuk-body">{% markdown %}{{detail_page.fields.links | safe}}{%endmarkdown%}</p>
-
 
         </div>
 
