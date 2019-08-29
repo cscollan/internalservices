@@ -57,3 +57,4 @@ exports.home_get = function (req, res) {
 
    res.redirect("home/");
 }
+
