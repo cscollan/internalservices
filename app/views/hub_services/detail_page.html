@@ -85,10 +85,10 @@
             <p class="govuk-body">{% markdown %}{{detail_page.fields.summary |safe}}{%endmarkdown%}</p>
 
             <h2 class="govuk-heading-m govuk-!-margin-top-5">User stories</h2>
-            <p class="govuk-body">{% markdown %}{{detail_page.fields.userStories}}{%endmarkdown%}</p>
+            <p class="govuk-body">{% markdown %}{{detail_page.fields.userStories |safe}}{%endmarkdown%}</p>
 
             <h2 class="govuk-heading-m govuk-!-margin-top-5">Features</h2>
-            <p class="govuk-body">{% markdown %}{{detail_page.fields.features}}{%endmarkdown%}</p>
+            <p class="govuk-body">{% markdown %}{{detail_page.fields.features |safe}}{%endmarkdown%}</p>
 
             <h2 class="govuk-heading-m govuk-!-margin-top-5">Links</h2>
             <p class="govuk-body">{% markdown %}{{detail_page.fields.links | safe}}{%endmarkdown%}</p>
