@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 var coreController = require('./controllers/coreController.js')
-var hubServicesController = require('./controllers/HubServicesController.js')
+var hubServicesController = require('./controllers/hubServicesController.js')
 var informationServicesController = require('./controllers/informationServicesController.js')
 var transactionalServicesController = require('./controllers/transactionalServicesController.js')
 var webServicesController = require('./controllers/webServicesController.js')
